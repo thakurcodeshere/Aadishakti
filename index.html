@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aadishakti</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-surface" aria-label="Aadishakti game prototype">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Aadishakti</p>
+            <h1>Soul Ascent</h1>
+          </div>
+          <div class="resource-strip" aria-live="polite">
+            <span><b id="karmaValue">0</b> Karma</span>
+            <span><b id="dharmaValue">50</b> Dharma</span>
+            <span><b id="tapasyaValue">0</b> Tapasya</span>
+            <span><b id="shaktiValue">12</b> Shakti</span>
+            <span><b id="surgeValue">0</b> Surge</span>
+          </div>
+        </header>
+
+        <div class="layout">
+          <aside class="side-panel roster-panel">
+            <div class="panel-heading">
+              <span>Avatar</span>
+              <strong id="leagueLabel">Mortal Spark</strong>
+            </div>
+            <div class="avatar-list" id="avatarList"></div>
+          </aside>
+
+          <section class="arena-column">
+            <div class="loka-track" id="lokaTrack"></div>
+            <div class="canvas-wrap">
+              <canvas id="gameCanvas" width="960" height="600"></canvas>
+              <div class="overlay-readout">
+                <span id="lokaName">Bhuloka</span>
+                <strong id="trialName">Trial of First Flame</strong>
+              </div>
+              <div class="guardian-readout">
+                <span id="guardianName">Yaksha Sentinel</span>
+                <b id="guardianIntent">Testing resolve</b>
+              </div>
+            </div>
+            <div class="action-bar">
+              <button id="strikeBtn" type="button">Strike</button>
+              <button id="astraBtn" type="button">Invoke Astra</button>
+              <button id="tapasyaBtn" type="button">Tapasya</button>
+              <button id="reincarnateBtn" type="button">Reincarnate</button>
+            </div>
+            <div class="choice-panel">
+              <button id="dharmaChoiceBtn" type="button">Uphold Dharma</button>
+              <button id="powerChoiceBtn" type="button">Claim Power</button>
+              <button id="mercyChoiceBtn" type="button">Offer Mercy</button>
+              <button id="resetBtn" type="button">Reset Cycle</button>
+            </div>
+            <div class="fusion-panel">
+              <div class="panel-heading compact">
+                <span>Element Mandala</span>
+                <strong id="fusionTierLabel">Tier 1</strong>
+              </div>
+              <div class="fusion-readout">
+                <b id="fusionName">Agni</b>
+                <span id="fusionDescription">Primordial fire, purification, heat, sacrifice.</span>
+              </div>
+              <div class="element-grid" id="elementGrid"></div>
+              <div class="sequence-list" id="fusionSequence"></div>
+              <div class="fusion-actions">
+                <button id="fuseBtn" type="button">Fuse Elements</button>
+                <button id="clearFusionBtn" type="button">Clear Mandala</button>
+              </div>
+            </div>
+          </section>
+
+          <aside class="side-panel progression-panel">
+            <div class="panel-heading">
+              <span>Power</span>
+              <strong id="elementLabel">Agni</strong>
+            </div>
+            <div class="meter-group">
+              <label>Avatar Mastery <span id="masteryText">1 / 100</span></label>
+              <div class="meter"><i id="masteryMeter"></i></div>
+            </div>
+            <div class="meter-group">
+              <label>Astra Evolution <span id="astraText">Dormant</span></label>
+              <div class="meter"><i id="astraMeter"></i></div>
+            </div>
+            <div class="power-grid" id="powerGrid"></div>
+            <div class="profile-panel">
+              <div class="panel-heading compact">
+                <span>Avatar Lore</span>
+                <strong id="unlockLabel">Awakened</strong>
+              </div>
+              <p id="avatarLore"></p>
+              <p id="avatarQuest"></p>
+            </div>
+            <div class="profile-panel">
+              <div class="panel-heading compact">
+                <span>Astra Mantra</span>
+                <strong id="astraReadyLabel">Dormant</strong>
+              </div>
+              <p id="astraRequirement"></p>
+              <p id="astraFusion"></p>
+            </div>
+            <div class="boon-panel">
+              <div class="panel-heading compact">
+                <span>Boons & Burdens</span>
+                <strong id="cycleLabel">Cycle 1</strong>
+              </div>
+              <div class="boon-list" id="boonList"></div>
+            </div>
+            <div class="event-log" id="eventLog" aria-live="polite"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
